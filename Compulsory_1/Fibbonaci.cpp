@@ -1,18 +1,32 @@
 #include "Fibbonaci.h"
 #include <iostream>
-
+#include "Recursion.h"
+#include <string>
 
 int main()
 {
 	Fibbonaci Test;
+	Recursion Test2;
 
-	std::cout << "Type the amount of recursions." << std::endl;
-
+	std::cout << "Type the amount of fibbonaci recursions." << std::endl;
 	std::cin >> Test.amount;
+
 	std::cout << " " << std::endl;
 
-	std::cout << "Amount of recursion." << std::endl;
+	std::cout << "Type the amount of regular recursions." << std::endl;
+    std::cin >> Test2.lim;
+
+	std::cout << " " << std::endl;
+
+	//___________________________________________________________________________
+
+	std::cout << "Amount of  fibbonaci recursion." << std::endl;
 	std::cout << Test.Fibb(Test.amount, Test.element1,Test.element2) << std::endl;
+
+	std::cout << " " << std::endl;
+
+	std::cout << "Amount of regular recursions." << std::endl;
+	std::cout << Test2.Rec(Test2.lim) << std::endl;
 
 }
 
@@ -38,3 +52,4 @@ int Fibbonaci::Fibb(int amount, int element1, int element2)
 	}
 
 }
+

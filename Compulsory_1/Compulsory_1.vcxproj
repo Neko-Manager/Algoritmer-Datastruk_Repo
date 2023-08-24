@@ -128,9 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Fibbonaci.h" />
+    <ClInclude Include="Recursion.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Fibbonaci.cpp" />
+    <ClCompile Include="Recursion.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -7,5 +7,6 @@ public:
 	 int amount;
 	 int element1 = 0;
 	 int element2 = 1;
+
 };
 

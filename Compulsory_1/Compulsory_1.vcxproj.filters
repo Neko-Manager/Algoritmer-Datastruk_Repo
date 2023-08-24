@@ -18,9 +18,15 @@
     <ClInclude Include="Fibbonaci.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Recursion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Fibbonaci.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Recursion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
