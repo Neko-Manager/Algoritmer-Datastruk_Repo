@@ -13,7 +13,7 @@ int main()
 
 	std::cout << " " << std::endl;
 
-	std::cout << "Type the amount of regular recursions." << std::endl;
+	std::cout << "Type the amount of factorial recursions." << std::endl;
     std::cin >> Test2.lim;
 
 	std::cout << " " << std::endl;
@@ -25,7 +25,7 @@ int main()
 
 	std::cout << " " << std::endl;
 
-	std::cout << "Amount of regular recursions." << std::endl;
+	std::cout << "Amount of factorial recursions." << std::endl;
 	std::cout << Test2.Rec(Test2.lim) << std::endl;
 
 }
