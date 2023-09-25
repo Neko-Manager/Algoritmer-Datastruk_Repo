@@ -4,11 +4,15 @@
 #include "QuickSort.h"
 #include "MergeSort.h"
 #include "BubbleSort.h"
+#include <chrono>
 
-using namespace std;
+using namespace std; 
+using namespace std::chrono;
 
 void Main::SelectInput()
 {
+	srand(time(NULL));
+
 	char UserInputNumber;
 	char UserInputMethod;
 
@@ -54,7 +58,7 @@ void Main::SelectInput()
 						///Turns the all elements in the given amount to random numbers.
 						for (int i = 0; i < AmountOfRandomNumbers; i++) 
 						{
-							InsertList.push_back(rand() % 15 + i); 
+							InsertList.push_back(rand() % 500 + 1); 
 						}
 						break;
 					}
@@ -78,64 +82,77 @@ void Main::SelectInput()
 
 				cout << " " << endl << " " << endl;
 				cout << "QuickSorted list" << endl;
+				
+				auto start = high_resolution_clock::now(); 
 				sort.quickSort(InsertList,0, InsertList.size() - 1); 
-				sort.printQsort(InsertList); 
+				auto stop = high_resolution_clock::now();  
+				auto duartion = duration_cast<microseconds>(stop - start);
+                sort.printQsort(InsertList);  
+
+				cout << " " << endl << " " << endl;  
+				cout << "Calculation Time:" << duartion.count() << "Microseconds" << endl;
 				break;
 			}
 			case 'm':
+			{	
+			MergeSort sort; 
+			vector<int> InsertList;
+
+			cout << " " << endl << "Choosen quicksort" << " " << endl;
+			cout << "Put amount of random numbers. One number:" << " " << endl; 
+
+			///A while function to insert a manual amount of integers in the list.
+			while (true)
 			{
-				MergeSort sort;  
-				vector<int> InsertList;
+				///All whitspaces will be ignored.
+				cin >> ws; 
 
-				cout << " " << endl << "Choosen quicksort" << " " << endl;
-				cout << "Put amount of random numbers. One number:" << " " << endl; 
+				///Creating an integer which will store a input value which will be itterated over and turned into rnadom numbers.
+				int  AmountOfRandomNumbers = cin.peek(); 
 
-				///A while function to insert a manual amount of integers in the list.
-				while (true)
+				///If the typed variable is an integer, the code will procced to the for loop.
+				if (isdigit(AmountOfRandomNumbers)) 
 				{
-					///All whitspaces will be ignored.
-					cin >> ws; 
+					cin >> AmountOfRandomNumbers; 
+					cout << " " << endl << " " << endl; 
 
-					///Creating an integer which will store a input value which will be itterated over and turned into rnadom numbers.
-					int  AmountOfRandomNumbers = cin.peek();  
-
-					///If the typed variable is an integer, the code will procced to the for loop.
-					if (isdigit(AmountOfRandomNumbers)) 
+					///Turns the all elements in the given amount to random numbers.
+					for (int i = 0; i < AmountOfRandomNumbers; i++) 
 					{
-						cin >> AmountOfRandomNumbers;  
-						cout << " " << endl << " " << endl; 
-
-						///Turns the all elements in the given amount to random numbers.
-						for (int i = 0; i < AmountOfRandomNumbers; i++) 
-						{
-							InsertList.push_back(rand() % 15 + i);  
-						}
-						break;
+						InsertList.push_back(rand() % 500 + 1); 
 					}
-
-					///If the typed is a letter, then the program wil break.
-					else if (isalpha(AmountOfRandomNumbers)) 
-					{
-						///Screan is cleared if this condition is met.
-						cout << "This is not an integer. Restart and try again" << endl << " "; 
-						system("pause"); 
-						system("cls"); 
-					}
-				}
-				///If the condition is met and the code has been verified and runned, this code will print the original typed list for a comparison.
-				cout << "Original typed list" << endl;  
-
-				for (int i = 0; i < InsertList.size(); i++)
-				{
-					cout << InsertList[i] << " ";  
+					break;
 				}
 
+				///If the typed is a letter, then the program wil break.
+				else if (isalpha(AmountOfRandomNumbers)) 
+				{
+					///Screan is cleared if this condition is met.
+					cout << "This is not an integer. Restart and try again" << endl << " ";
+					system("pause");
+					system("cls");
+				}
+			}
+			///If the condition is met and the code has been verified and runned, this code will print the original typed list for a comparison.
+			cout << "Original typed list" << endl;
 
-				cout << " " << endl << " " << endl; 
-				cout << "QuickSorted list" << endl;
-				sort.mergeSort(InsertList);   
-				sort.printMsort(InsertList);  
-				break;
+			for (int i = 0; i < InsertList.size(); i++)
+			{
+				cout << InsertList[i] << " ";
+			}
+
+			cout << " " << endl << " " << endl;
+			cout << "MergeSorted list" << endl;
+
+			auto start = high_resolution_clock::now();  
+			sort.mergeSort(InsertList); 
+			auto stop = high_resolution_clock::now(); 
+			auto duartion = duration_cast<microseconds>(stop - start); 
+			sort.printMsort(InsertList); 
+
+			cout << " " << endl << " " << endl;
+			cout << "Calculation Time:" << duartion.count() << "Microseconds" << endl;
+			break;
 			}
 			case 'b':
 			{
@@ -163,7 +180,7 @@ void Main::SelectInput()
 						///Turns the all elements in the given amount to random numbers.
 						for (int i = 0; i < AmountOfRandomNumbers; i++) 
 						{
-							InsertList.push_back(rand() % 15 + i); 
+							InsertList.push_back(rand() % 500 + 1); 
 						}
 						break;
 					}
@@ -186,9 +203,16 @@ void Main::SelectInput()
 				}
 
 				cout << " " << endl << " " << endl;
-				cout << "QuickSorted list" << endl;
-				sort.bubbleSort(InsertList);  
-				sort.printBsort(InsertList); 
+				cout << "BubbleSorted list" << endl;
+
+				auto start = high_resolution_clock::now(); 
+				sort.bubbleSort(InsertList); 
+				auto stop = high_resolution_clock::now(); 
+				auto duartion = duration_cast<microseconds>(stop - start); 
+				sort.printBsort(InsertList);
+				 
+				cout << " " << endl << " " << endl;
+				cout << "Calculation Time:" << duartion.count() << "Microseconds" << endl;
 				break;
 			}
 			{
@@ -259,10 +283,17 @@ void Main::SelectInput()
 						break;
 					}	    
 				}
+				cout << " " << endl << " " << endl;
+				cout << "BubbleSorted list" << endl;
+
+				auto start = high_resolution_clock::now(); 
+				sort.quickSort(InsertList, 0, InsertList.size() - 1); 
+				auto stop = high_resolution_clock::now(); 
+				auto duartion = duration_cast<microseconds>(stop - start); 
+				sort.printQsort(InsertList); 
+
 				cout << " " << endl << " " << endl; 
-				cout << "QuickSorted list" << endl;
-				sort.quickSort(InsertList, 0, InsertList.size() - 1);       
-				sort.printQsort(InsertList);   
+				cout << "Calculation Time:" << duartion.count() << "Microseconds" << endl; 
 		 
 				break;
 			}
@@ -316,10 +347,17 @@ void Main::SelectInput()
 					}
 				}
 				cout << " " << endl << " " << endl;
-				cout << "MergeSorted list" << endl;
-				sort.mergeSort(InsertList);  
+				cout << "BubbleSorted list" << endl;
+
+				auto start = high_resolution_clock::now(); 
+				sort.mergeSort(InsertList); 
+				auto stop = high_resolution_clock::now(); 
+				auto duartion = duration_cast<microseconds>(stop - start); 
 				sort.printMsort(InsertList); 
 
+				cout << " " << endl << " " << endl; 
+				cout << "Calculation Time:" << duartion.count() << "Microseconds" << endl; 
+				 
 				break;
 			}
 			case 'b':
@@ -373,8 +411,15 @@ void Main::SelectInput()
 				}
 				cout << " " << endl << " " << endl;
 				cout << "BubbleSorted list" << endl;
-				sort.bubbleSort(InsertList);
-				sort.printBsort(InsertList);
+
+				auto start = high_resolution_clock::now();
+				sort.bubbleSort(InsertList); 
+				auto stop = high_resolution_clock::now(); 
+				auto duartion = duration_cast<microseconds>(stop - start);
+				sort.printBsort(InsertList); 
+
+				cout << " " << endl << " " << endl;
+				cout << "Calculation Time:" << duartion.count() << "Microseconds" << endl;
 				break;
 			}
 			{
@@ -394,7 +439,7 @@ void Main::SelectInput()
 		break;
 	}
 
-
+	
 }
 
 int main() 
