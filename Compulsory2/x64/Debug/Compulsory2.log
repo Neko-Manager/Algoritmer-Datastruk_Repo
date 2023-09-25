@@ -1,0 +1,11 @@
+﻿  BubbleSort.cpp
+C:\Users\danie\OneDrive\Dokumenter\Spiltek_2023Høst\Algoritmer og datastruktur\Algoritmer-Datastruk_Repo\Compulsory2\BubbleSort.cpp(22,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Main.cpp
+C:\Users\danie\OneDrive\Dokumenter\Spiltek_2023Høst\Algoritmer og datastruktur\Algoritmer-Datastruk_Repo\Compulsory2\Main.cpp(81,52): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\danie\OneDrive\Dokumenter\Spiltek_2023Høst\Algoritmer og datastruktur\Algoritmer-Datastruk_Repo\Compulsory2\Main.cpp(264,53): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  MergeSort.cpp
+C:\Users\danie\OneDrive\Dokumenter\Spiltek_2023Høst\Algoritmer og datastruktur\Algoritmer-Datastruk_Repo\Compulsory2\MergeSort.cpp(11,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\danie\OneDrive\Dokumenter\Spiltek_2023Høst\Algoritmer og datastruktur\Algoritmer-Datastruk_Repo\Compulsory2\MergeSort.cpp(13,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\danie\OneDrive\Dokumenter\Spiltek_2023Høst\Algoritmer og datastruktur\Algoritmer-Datastruk_Repo\Compulsory2\MergeSort.cpp(61,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  Compulsory2.vcxproj -> C:\Users\danie\OneDrive\Dokumenter\Spiltek_2023Høst\Algoritmer og datastruktur\Algoritmer-Datastruk_Repo\Compulsory2\x64\Debug\Compulsory2.exe
