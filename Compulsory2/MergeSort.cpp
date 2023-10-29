@@ -73,7 +73,7 @@ void MergeSort::mergeSort(vector<int>& list)
 	///Left is from 0-->Middle
 	vector<int>* LeftArray = new vector<int>[Middle];    
 	///Right is from Middle-->End, or the remaining size.
-	vector<int>* RightArray = new vector<int>[ListLength-Middle];    
+	vector<int>* RightArray = new vector<int>[ListLength-Middle];     
 
 	///LeftArray. Updates after loops are run, not in it.
 	int i = 0;

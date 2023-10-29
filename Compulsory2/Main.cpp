@@ -140,8 +140,8 @@ void Main::SelectInput()
 			{
 				cout << InsertList[i] << " ";
 			}
-
-			cout << " " << endl << " " << endl;
+			 
+			cout << " " << endl << " " << endl; 
 			cout << "MergeSorted list" << endl;
 
 			auto start = high_resolution_clock::now();  
@@ -438,8 +438,6 @@ void Main::SelectInput()
 		SelectInput();
 		break;
 	}
-
-	
 }
 
 int main() 
